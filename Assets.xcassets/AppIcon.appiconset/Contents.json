@@ -4,7 +4,7 @@
       "idiom": "universal",
       "platform": "ios",
       "size": "1024x1024",
-      "filename": "icon_1024.png"
+      "filename": "icon_1024_opaque.png"
     },
     {
       "idiom": "mac",

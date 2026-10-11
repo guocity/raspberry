@@ -66,6 +66,10 @@ Or open the app located at:
 `build/macOS/Raspberry.app`
 
 ### 2. iOS / iPadOS (Simulator or Physical Device)
+Requires iOS or iPadOS 18.0 or later.
+
+[Privacy policy](docs/privacy.md) · [Support](https://github.com/guocity/raspberry/issues)
+
 1. Open the project in Xcode:
    ```bash
    ./open_xcode.sh
