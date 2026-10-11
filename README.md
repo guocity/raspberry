@@ -56,6 +56,8 @@ raspberry/
 ## 🚀 How to Run
 
 ### 1. macOS (Instant Launch)
+Requires macOS 15.0 (Sequoia) or later.
+
 Build and launch the app:
 ```bash
 ./run_mac.sh
