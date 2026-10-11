@@ -1,0 +1,197 @@
+{
+ "units": "1 unit = 1 cm (the berry is ~2.3 units tall)",
+ "axes": "glTF, +Y up. Everything below (normal map, custom attributes, SH, fuzz) is in this model space.",
+ "textures": {
+  "albedo": {
+   "file": "albedo.ktx2",
+   "srgb": true
+  },
+  "normal_os": {
+   "file": "normal_os.ktx2",
+   "note": "model-space normal, n = rgb * 2 - 1"
+  },
+  "ao_rough_thick": {
+   "file": "ao_rough_thick.ktx2",
+   "channels": "R ao, G roughness, B thickness"
+  },
+  "detail_normal": {
+   "file": "detail_normal.ktx2",
+   "tile_cm": 0.2608695652173913
+  }
+ },
+ "transfer": {
+  "files": [
+   "transfer_sh0.ktx2",
+   "transfer_sh1.ktx2",
+   "transfer_sh2.ktx2",
+   "transfer_sh3.ktx2",
+   "transfer_sh4.ktx2",
+   "transfer_sh5.ktx2",
+   "transfer_sh6.ktx2",
+   "transfer_sh7.ktx2",
+   "transfer_sh8.ktx2"
+  ],
+  "scales": [
+   0.1754150390625,
+   0.1612548828125,
+   0.1563720703125,
+   0.157470703125,
+   0.0567626953125,
+   0.055755615234375,
+   0.0673828125,
+   0.05682373046875,
+   0.06072998046875
+  ],
+  "decode": "v = texel * 2 - 1; T = sign(v) * v * v * scale[i]",
+  "sh_order": [
+   "Y00",
+   "Y1-1 (y)",
+   "Y10 (z)",
+   "Y11 (x)",
+   "Y2-2 (xy)",
+   "Y2-1 (yz)",
+   "Y20 (3z^2-1)",
+   "Y21 (xz)",
+   "Y22 (x^2-y^2)"
+  ]
+ },
+ "fuzz": {
+  "file": "raspberry_fuzz.bin",
+  "count": 97784,
+  "points_per_strand": 4,
+  "bbox_min": [
+   -1.1206793785095215,
+   -0.05889412388205528,
+   -1.0270899534225464
+  ],
+  "bbox_max": [
+   1.1003376245498657,
+   2.313430070877075,
+   1.0541361570358276
+  ],
+  "radius_unit": 0.001,
+  "buffers": {
+   "position_u16": {
+    "offset": 0,
+    "length": 2346816,
+    "shape": [
+     97784,
+     4,
+     3
+    ]
+   },
+   "normal_i8": {
+    "offset": 2346816,
+    "length": 293352,
+    "shape": [
+     97784,
+     3
+    ]
+   },
+   "meta_u8": {
+    "offset": 2640168,
+    "length": 391136,
+    "shape": [
+     97784,
+     4
+    ]
+   },
+   "drupelet_u16": {
+    "offset": 3031304,
+    "length": 195568,
+    "shape": [
+     97784
+    ]
+   },
+   "uv_u16": {
+    "offset": 3226872,
+    "length": 391136,
+    "shape": [
+     97784,
+     2
+    ]
+   }
+  },
+  "meta_u8": [
+   "root_radius",
+   "kind (0 velvet, 255 woolly)",
+   "flank",
+   "random"
+  ]
+ },
+ "model": {
+  "file": "raspberry.glb",
+  "meshes": {
+   "Raspberry_LOD0": {
+    "triangles": 229946,
+    "vertices": 123663,
+    "attributes": {
+     "POSITION": "cm",
+     "NORMAL": "smooth normal of the underlying analytic surface",
+     "TEXCOORD_0": "atlas UV shared with every baked texture",
+     "COLOR_0": "R = free (1 exposed dome .. 0 pressed contact), G = depth below the outer skin / 0.7 cm (~1 = cavity lining), B = per-drupelet random, A = dome (0.5 + 0.5 * cos of the angle from the drupelet apex)",
+     "_CENTER": "centre of the drupelet this vertex belongs to (model space)",
+     "_DRUPELET": "drupelet index (float)"
+    }
+   },
+   "Raspberry_LOD1": {
+    "triangles": 91886,
+    "vertices": 50979,
+    "attributes": "same as LOD0 (same UVs, same textures)"
+   },
+   "Raspberry_Styles_Mesh": {
+    "triangles": 33696,
+    "vertices": 17472,
+    "attributes": {
+     "COLOR_0": "R = t along the style (0 root .. 1 stigma), G = dryness (1 = dark, dried), B = random",
+     "TEXCOORD_0": "u around, v along"
+    }
+   }
+  }
+ },
+ "drupelets": {
+  "count": 117
+ },
+ "reference_material": {
+  "base_colors_linear": {
+   "ripe": [
+    0.36,
+    0.0025,
+    0.012
+   ],
+   "bright": [
+    0.47,
+    0.006,
+    0.017
+   ],
+   "dark": [
+    0.2,
+    0.001,
+    0.012
+   ],
+   "inner": [
+    0.74,
+    0.24,
+    0.23
+   ]
+  },
+  "subsurface_radius_cm": [
+   0.22,
+   0.022000000000000002,
+   0.0132
+  ],
+  "subsurface_anisotropy": 0.0,
+  "ior": 1.38,
+  "roughness_range": [
+   0.19,
+   0.4
+  ],
+  "sheen": 0.12,
+  "fuzz_color_linear": [
+   0.92,
+   0.86,
+   0.84
+  ],
+  "view_transform": "Khronos PBR Neutral"
+ }
+}
