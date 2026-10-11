@@ -1,0 +1,3373 @@
+{
+  "shots": [
+    {
+      "preset": "Twin strips",
+      "beats": 3,
+      "distance": [
+        9.6,
+        8.6
+      ],
+      "elevation": 4,
+      "sweep": [
+        -55,
+        0
+      ],
+      "fade": [
+        0,
+        1
+      ],
+      "ease": "out"
+    },
+    {
+      "preset": "Strip light",
+      "beats": 2,
+      "distance": 3.5,
+      "elevation": 8,
+      "lookY": [
+        -0.45,
+        0.4
+      ],
+      "sweep": [
+        -35,
+        30
+      ],
+      "bokeh": 5,
+      "spin": 0.3,
+      "ease": "inOut"
+    },
+    {
+      "preset": "Dark",
+      "beats": 2,
+      "distance": [
+        8.9,
+        8.2
+      ],
+      "elevation": [
+        -12,
+        18
+      ],
+      "ease": "inOut"
+    },
+    {
+      "preset": "Gloss",
+      "beats": 1,
+      "distance": 3.3,
+      "elevation": 20,
+      "lookY": 0.4,
+      "roll": [
+        -8,
+        0
+      ],
+      "sweep": [
+        25,
+        -20
+      ],
+      "bokeh": 5,
+      "spin": 0.3
+    },
+    {
+      "preset": "Clean white",
+      "beats": 2,
+      "distance": 8.6,
+      "elevation": 8,
+      "yaw": [
+        -65,
+        0
+      ],
+      "ease": "out"
+    },
+    {
+      "preset": "White",
+      "beats": 1,
+      "distance": [
+        8.4,
+        7.4
+      ],
+      "elevation": 80,
+      "roll": [
+        0,
+        40
+      ],
+      "spin": 0.3
+    },
+    {
+      "preset": "Halo",
+      "beats": 2,
+      "distance": [
+        10.4,
+        8.4
+      ],
+      "elevation": -5,
+      "ease": "outExpo"
+    },
+    {
+      "preset": "Halo",
+      "beats": 1,
+      "distance": 3.6,
+      "elevation": 6,
+      "lookSide": 0.55,
+      "lookY": 0.2,
+      "bokeh": 5,
+      "spin": 0.4
+    },
+    {
+      "preset": "Graphite",
+      "beats": 2,
+      "distance": 8.4,
+      "elevation": [
+        15,
+        6
+      ],
+      "yaw": [
+        0,
+        60
+      ],
+      "sweep": [
+        -20,
+        15
+      ],
+      "ease": "inOut"
+    },
+    {
+      "preset": "Spotlight",
+      "beats": 2,
+      "distance": [
+        8.2,
+        7
+      ],
+      "elevation": [
+        18,
+        70
+      ],
+      "yaw": -50,
+      "ease": "inOut"
+    },
+    {
+      "preset": "Lantern",
+      "beats": 1,
+      "distance": [
+        5.4,
+        4.5
+      ],
+      "elevation": 76,
+      "lookY": 0.5,
+      "roll": [
+        0,
+        24
+      ],
+      "spin": 0.4
+    },
+    {
+      "preset": "Rim light",
+      "beats": 1,
+      "distance": [
+        10.2,
+        8.6
+      ],
+      "elevation": -6,
+      "ease": "outExpo"
+    },
+    {
+      "preset": "Strip light",
+      "beats": 2,
+      "distance": [
+        3.7,
+        3.4
+      ],
+      "elevation": 12,
+      "yaw": -40,
+      "lookY": [
+        0.25,
+        -0.1
+      ],
+      "sweep": [
+        -30,
+        15
+      ],
+      "focusPull": [
+        1.7,
+        0
+      ],
+      "bokeh": 6,
+      "spin": 0.3,
+      "ease": "out"
+    },
+    {
+      "preset": "Studio",
+      "beats": 1,
+      "distance": 3.4,
+      "elevation": 14,
+      "yaw": 30,
+      "lookY": 0.3,
+      "roll": [
+        6,
+        0
+      ],
+      "bokeh": 5,
+      "spin": 0.4
+    },
+    {
+      "preset": "Dark",
+      "beats": 1,
+      "distance": [
+        3.9,
+        3.3
+      ],
+      "elevation": 4,
+      "yaw": 95,
+      "lookY": 0.2,
+      "bokeh": 5,
+      "spin": 0.4
+    },
+    {
+      "preset": "Twin strips",
+      "beats": 3,
+      "distance": [
+        9.6,
+        8.2
+      ],
+      "elevation": [
+        14,
+        6
+      ],
+      "sweep": [
+        40,
+        0
+      ],
+      "ease": "out"
+    }
+  ],
+  "looks": {
+    "Studio": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.35,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.25,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Dark": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -48,
+          "elevation": 46,
+          "intensity": 1.96,
+          "color": "#fff3e6",
+          "size": 58.5,
+          "stretch": 0.25
+        },
+        "fill": {
+          "azimuth": 95,
+          "elevation": -8,
+          "intensity": 0.25,
+          "color": "#ffe2d6",
+          "size": 30,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 142,
+          "elevation": 22,
+          "intensity": 5,
+          "color": "#fff4ea",
+          "size": 12,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1.78,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 0.79,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 2.79,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.39,
+        "ior": 1.355,
+        "roughnessScale": 1.06,
+        "roughnessBias": 0.03,
+        "detailStrength": 1.2,
+        "detailScale": 0.53,
+        "sheen": 0.43,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1.78
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.43,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.43
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1.57,
+        "specular": 0.29
+      },
+      "post": {
+        "exposure": 1.25,
+        "toneMapping": "ACES Filmic",
+        "bloom": true,
+        "bloomIntensity": 0.5,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Backlit": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 168,
+          "elevation": 20,
+          "intensity": 7,
+          "color": "#ffffff",
+          "size": 40,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": -20,
+          "elevation": 15,
+          "intensity": 0.12,
+          "color": "#ffffff",
+          "size": 50,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": -160,
+          "elevation": 35,
+          "intensity": 3,
+          "color": "#ffffff",
+          "size": 35,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#ffffff",
+        "ambientIntensity": 0.18,
+        "ambientGradient": 0,
+        "background": "#f6f6f6",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 3,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.25,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.1,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "White": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -25,
+          "elevation": 48,
+          "intensity": 2.8,
+          "color": "#ffffff",
+          "size": 22,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 75,
+          "elevation": 15,
+          "intensity": 0.9,
+          "color": "#ffffff",
+          "size": 45,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 160,
+          "elevation": 30,
+          "intensity": 1.2,
+          "color": "#ffffff",
+          "size": 30,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#ffffff",
+        "ambientIntensity": 0.45,
+        "ambientGradient": 0.2,
+        "background": "#f4f4f4",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.35,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.1,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Golden hour": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -62,
+          "elevation": 12,
+          "intensity": 4.6,
+          "color": "#ffae5e",
+          "size": 9,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 80,
+          "elevation": 35,
+          "intensity": 0.5,
+          "color": "#9db8ff",
+          "size": 50,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 158,
+          "elevation": 16,
+          "intensity": 3.6,
+          "color": "#ffc488",
+          "size": 11,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#b9c7ff",
+        "ambientIntensity": 0.16,
+        "ambientGradient": 0.4,
+        "background": "#f1cfa9",
+        "backgroundIntensity": 0.9,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1.4,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.45,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.3,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Candy": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -30,
+          "elevation": 45,
+          "intensity": 3,
+          "color": "#fff2f6",
+          "size": 30,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 62,
+          "elevation": 10,
+          "intensity": 1.4,
+          "color": "#ffd6ea",
+          "size": 50,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 30,
+          "intensity": 2,
+          "color": "#ffffff",
+          "size": 25,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#ffd3e6",
+        "ambientIntensity": 0.55,
+        "ambientGradient": 0.2,
+        "background": "#ffaccb",
+        "backgroundIntensity": 0.95,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.5,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.55,
+        "bloomThreshold": 0.8,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.1,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Spotlight": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 8,
+          "elevation": 76,
+          "intensity": 6,
+          "color": "#fff4e8",
+          "size": 11,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": -70,
+          "elevation": 5,
+          "intensity": 0.08,
+          "color": "#c9d6ff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 178,
+          "elevation": 38,
+          "intensity": 1.4,
+          "color": "#ffffff",
+          "size": 18,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.02,
+        "ambientGradient": 0,
+        "background": "#0b0a0c",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.45,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.45,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Neon": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -72,
+          "elevation": 14,
+          "intensity": 5.5,
+          "color": "#ff2bd6",
+          "size": 14,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 20,
+          "elevation": 60,
+          "intensity": 0.35,
+          "color": "#7a5cff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 108,
+          "elevation": 18,
+          "intensity": 6.5,
+          "color": "#19e3ff",
+          "size": 12,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#2a1050",
+        "ambientIntensity": 0.08,
+        "ambientGradient": 0,
+        "background": "#06030c",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1.3,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.3,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 2.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.75,
+        "bloomThreshold": 0.8,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.3,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Rim light": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 152,
+          "elevation": 18,
+          "intensity": 7.5,
+          "color": "#fff1e0",
+          "size": 10,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 0,
+          "elevation": 20,
+          "intensity": 0.05,
+          "color": "#ffffff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": -150,
+          "elevation": 24,
+          "intensity": 6,
+          "color": "#ffe3d2",
+          "size": 10,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1.7,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 3.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.6,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.2,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Twin strips": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 132,
+          "elevation": 6,
+          "intensity": 9,
+          "color": "#ffffff",
+          "size": 4,
+          "stretch": 8
+        },
+        "fill": {
+          "azimuth": 0,
+          "elevation": 30,
+          "intensity": 0.04,
+          "color": "#ffffff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": -132,
+          "elevation": 6,
+          "intensity": 9,
+          "color": "#ffffff",
+          "size": 4,
+          "stretch": 8
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1.5,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.3,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 2.6,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.5,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Strip light": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -98,
+          "elevation": 8,
+          "intensity": 4.6,
+          "color": "#ffffff",
+          "size": 4.5,
+          "stretch": 7
+        },
+        "fill": {
+          "azimuth": 30,
+          "elevation": 20,
+          "intensity": 0,
+          "color": "#ffffff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 128,
+          "elevation": 10,
+          "intensity": 3.2,
+          "color": "#f2f6ff",
+          "size": 4,
+          "stretch": 7
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 0.6,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.6,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.45,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Gloss": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 0,
+          "elevation": 84,
+          "intensity": 3,
+          "color": "#ffffff",
+          "size": 30,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": -20,
+          "elevation": -8,
+          "intensity": 0.7,
+          "color": "#ffffff",
+          "size": 4,
+          "stretch": 0.15
+        },
+        "rim": {
+          "azimuth": 165,
+          "elevation": 30,
+          "intensity": 3,
+          "color": "#ffffff",
+          "size": 5,
+          "stretch": 6
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.7,
+        "ior": 1.38,
+        "roughnessScale": 0.8,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.5,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.2,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Halo": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": 180,
+          "elevation": 6,
+          "intensity": 10,
+          "color": "#fff6ee",
+          "size": 24,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 180,
+          "elevation": 55,
+          "intensity": 2.5,
+          "color": "#ffffff",
+          "size": 10,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 2.2,
+        "seeThrough": 1.6,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 4,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.7,
+        "bloomThreshold": 0.8,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Graphite": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -32,
+          "elevation": 54,
+          "intensity": 4.2,
+          "color": "#eef3ff",
+          "size": 16,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 80,
+          "elevation": 0,
+          "intensity": 0.12,
+          "color": "#dfe8ff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 158,
+          "elevation": 18,
+          "intensity": 5.5,
+          "color": "#f4f7ff",
+          "size": 4.5,
+          "stretch": 6
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#c9d2e6",
+        "ambientIntensity": 0.03,
+        "ambientGradient": 0.3,
+        "background": "#34343a",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1.3,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.4,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.55,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Clean white": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -52,
+          "elevation": 34,
+          "intensity": 4.2,
+          "color": "#ffffff",
+          "size": 8,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 10,
+          "intensity": 0.35,
+          "color": "#ffffff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 20,
+          "intensity": 3,
+          "color": "#ffffff",
+          "size": 5,
+          "stretch": 5
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#ffffff",
+        "ambientIntensity": 0.34,
+        "ambientGradient": 0.25,
+        "background": "#ffffff",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.2,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Lantern": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -42,
+          "elevation": 36,
+          "intensity": 0.55,
+          "color": "#b8c8ff",
+          "size": 20,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 10,
+          "intensity": 0.05,
+          "color": "#b8c8ff",
+          "size": 40,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 30,
+          "intensity": 1.6,
+          "color": "#8fa8ff",
+          "size": 14,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 6.5,
+          "color": "#ffd2a0",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#20284a",
+        "ambientIntensity": 0.06,
+        "ambientGradient": 0,
+        "background": "#05060b",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.7,
+        "bloomThreshold": 0.8,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.35,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Ember": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -40,
+          "elevation": 40,
+          "intensity": 0.06,
+          "color": "#ffd9c0",
+          "size": 20,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 0,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 8,
+          "color": "#ffb070",
+          "height": 1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0,
+        "ambientGradient": 0,
+        "background": "#000000",
+        "backgroundIntensity": 1,
+        "reflectionIntensity": 1,
+        "hdri": "None (studio lights)",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.9,
+        "bloomThreshold": 0.6,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.4,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Sunset": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Venice sunset",
+        "hdriIntensity": 1,
+        "hdriRotation": 100,
+        "hdriBackground": true,
+        "hdriBlur": 0.04
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1.6,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 2.5,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.5,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.3,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Dawn": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Dawn sky",
+        "hdriIntensity": 0.75,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.06
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.35,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.3,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Sunny field": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Sunny field",
+        "hdriIntensity": 0.75,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.05
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.4,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.25,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Forest": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Forest slope",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.08
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.35,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.25,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Photo studio": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Warm photo studio",
+        "hdriIntensity": 1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.12
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.35,
+        "bloomThreshold": 0.9,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.25,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "Neon studio": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "Neon studio",
+        "hdriIntensity": 0.85,
+        "hdriRotation": 75,
+        "hdriBackground": true,
+        "hdriBlur": 0.05
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.3,
+        "bloomThreshold": 1.3,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.3,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    },
+    "City night": {
+      "lights": {
+        "followCamera": false,
+        "key": {
+          "azimuth": -38,
+          "elevation": 40,
+          "intensity": 3.4,
+          "color": "#fff7f0",
+          "size": 13,
+          "stretch": 1
+        },
+        "fill": {
+          "azimuth": 70,
+          "elevation": 12,
+          "intensity": 0.6,
+          "color": "#ffeef0",
+          "size": 35,
+          "stretch": 1
+        },
+        "rim": {
+          "azimuth": 150,
+          "elevation": 25,
+          "intensity": 2.2,
+          "color": "#ffffff",
+          "size": 13,
+          "stretch": 1
+        },
+        "softboxSquare": 0.6,
+        "inner": {
+          "intensity": 0,
+          "color": "#ffe2bf",
+          "height": 1.1,
+          "wall": 0.6
+        }
+      },
+      "environment": {
+        "ambientColor": "#f1e2e0",
+        "ambientIntensity": 0.3,
+        "ambientGradient": 0.25,
+        "background": "#e9dcda",
+        "backgroundIntensity": 0.92,
+        "reflectionIntensity": 1,
+        "hdri": "City night",
+        "hdriIntensity": 1.1,
+        "hdriRotation": 0,
+        "hdriBackground": true,
+        "hdriBlur": 0.03
+      },
+      "skin": {
+        "sss": 1,
+        "tint": "#ffffff",
+        "saturation": 1,
+        "beadGlow": 1,
+        "seeThrough": 1,
+        "transColor": "#d0401f",
+        "transDepth": 0.15,
+        "seed": 1.22,
+        "specular": 1,
+        "ior": 1.38,
+        "roughnessScale": 1,
+        "roughnessBias": 0,
+        "detailStrength": 0.55,
+        "detailScale": 1,
+        "sheen": 0.35,
+        "sheenColor": "#ffd9d9",
+        "aoPower": 1
+      },
+      "fuzz": {
+        "visible": true,
+        "density": 1,
+        "width": 2.2,
+        "minPixels": 0.9,
+        "color": "#f3dcd8",
+        "opacity": 0.32,
+        "backlight": 1.2,
+        "skinBounce": 0.9
+      },
+      "styles": {
+        "visible": true,
+        "brightness": 1,
+        "specular": 0.5
+      },
+      "post": {
+        "exposure": 1,
+        "toneMapping": "Neutral",
+        "bloom": true,
+        "bloomIntensity": 0.7,
+        "bloomThreshold": 0.8,
+        "bloomRadius": 0.75,
+        "dof": true,
+        "focusOffset": -0.75,
+        "focusRange": 1.6,
+        "bokehScale": 3,
+        "vignette": 0.35,
+        "grain": 0.035
+      },
+      "camera": {
+        "fov": 20,
+        "autoRotate": true,
+        "autoRotateSpeed": 1
+      },
+      "model": {
+        "lod": 0
+      },
+      "quality": {
+        "preset": "High",
+        "pixelRatio": 1.5,
+        "aa": "MSAA 4x",
+        "dofQuality": "Medium",
+        "bloomQuality": "High",
+        "sss": "Transfer SH9 (9 tex)",
+        "detail": true,
+        "translucency": true,
+        "anisotropy": 8
+      },
+      "reel": {
+        "beat": 0.6,
+        "spin": 38,
+        "pushIn": 0.07,
+        "flash": 0.15,
+        "drift": 0.6,
+        "format": "Window",
+        "loop": true,
+        "hideUI": false
+      },
+      "debug": {
+        "fps": true,
+        "gpuTimer": false
+      }
+    }
+  },
+  "options": {
+    "beat": 0.6,
+    "spin": 38,
+    "pushIn": 0.07,
+    "flash": 0.15,
+    "drift": 0.6,
+    "format": "Window",
+    "loop": true,
+    "hideUI": false
+  },
+  "fov": 20
+}

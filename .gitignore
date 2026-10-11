@@ -1,0 +1,23 @@
+# macOS metadata
+.DS_Store
+
+# Xcode build products and caches
+/build/
+/DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM/
+*.dSYM.zip
+
+# Per-user Xcode settings
+xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager build state
+.build/
+.swiftpm/
+
+# Local signing credentials
+*.p12
+*.mobileprovision
+*.provisionprofile
