@@ -117,3 +117,27 @@ final class BerryOrbitCamera {
         }
     }
 }
+
+/// Low-latency portrait motion mapping, shared with the native motion checks.
+enum BerryMotionRotation {
+    static func upright(direction: SIMD3<Float>) -> (direction: SIMD3<Float>, up: SIMD3<Float>) {
+        let yaw = atan2(direction.x, direction.z)
+        // Stay clear of the poles where a world-up camera can become singular.
+        let limit: Float = 80 * .pi / 180
+        let pitch = min(limit, max(-limit, atan2(direction.y, hypot(direction.x, direction.z))))
+        let z = SIMD3<Float>(cos(pitch) * sin(yaw), sin(pitch), cos(pitch) * cos(yaw))
+        let right = simd_normalize(simd_cross(SIMD3<Float>(0, 1, 0), z))
+        return (z, simd_cross(z, right))
+    }
+
+    static func relative(reference: simd_quatf, attitude: simd_quatf,
+                         rotationRate: SIMD3<Float>, sampleAge: Double) -> simd_quatf {
+        // Predict only a short sensor-to-render delay, never a stale/background sample.
+        let horizon = Float(min(max(sampleAge, 0), 1.0 / 50))
+        let speed = simd_length(rotationRate)
+        let prediction = speed > 0.0001
+            ? simd_quatf(angle: speed * horizon, axis: rotationRate / speed)
+            : simd_quatf(angle: 0, axis: SIMD3(0, 1, 0))
+        return simd_normalize(reference.inverse * attitude * prediction)
+    }
+}

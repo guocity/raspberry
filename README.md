@@ -94,7 +94,7 @@ If the original model or textures change, regenerate the native assets before bu
 node scripts/prepare-native-assets.cjs
 ```
 
-The iOS app supports portrait orientation only. Run the native device UI test with **Product → Test (`⌘U`)** using the `Raspberry_iOS` scheme and an unlocked connected iPhone. The test verifies rendering, preset selection, reel controls, the adjustment sheet, and portrait menu bounds, and saves screenshots in the test results.
+The iOS app (version 1.1.0) supports portrait orientation only. With Gyroscope enabled, tilt and turn your iPhone to orbit the raspberry while it stays upright; phone roll does not tilt the berry sideways. Gyroscope is off by default; enable or disable it in the View menu at the top of Adjust → Gyroscope. Reset camera (or double tap) recenters motion at your current device orientation. Motion follows the phone directly, with short sensor-delay prediction; auto spin pauses while gyroscope control is active. Motion tracking pauses in the background and during the reel; touch controls remain available on devices without motion sensors. Run the native device UI test with **Product → Test (`⌘U`)** using the `Raspberry_iOS` scheme and an unlocked connected iPhone. The test verifies rendering, preset selection, reel controls, the adjustment sheet, and portrait menu bounds, and saves screenshots in the test results.
 
 ---
 
@@ -110,3 +110,5 @@ The iOS app supports portrait orientation only. Run the native device UI test wi
    - Simulates a lantern inside the hollow fruit core, glowing brightest where the fleshy wall is thin.
 4. **GPU Strand Extrusion**:
    - The original 97,784 strands are converted offline. iOS renders half of them as camera-facing ribbons, with minimum pixel width and alpha fading to reduce shimmer.
+
+Fast rendering is enabled by default. the View menu at the top of Adjust → Fast rendering switches between reduced scene resolution (70% per dimension, capped at 1600 pixels on the long edge), fewer fuzz strands, and no depth-of-field blur, or the full-detail renderer. The final image is scaled to the display resolution. GPU submissions are limited to two frames to avoid accumulating stale camera poses.

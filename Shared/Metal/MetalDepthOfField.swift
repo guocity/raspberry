@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 import Metal
 import simd
 
@@ -85,12 +86,12 @@ final class MetalDepthOfField {
 
     func encode(command: MTLCommandBuffer, output: MTLTexture, focusDistance: Float,
                 focusRange: Float, blurAmount: Float, enabled: Bool, gain: Float = 1) throws {
-        guard let targets, output.width == targets.scene.width, output.height == targets.scene.height else {
+        guard let targets else {
             throw PostError.unavailable
         }
         let useDOF = enabled && blurAmount > 0
         var uniforms = Uniforms(focus: SIMD4(0.1, 80, max(0.1, focusDistance), max(0.01, focusRange)),
-            blur: SIMD4(Float(output.width), Float(output.height), max(0, blurAmount) * 0.0017 * Float(output.height), useDOF ? 1 : 0),
+            blur: SIMD4(Float(targets.scene.width), Float(targets.scene.height), max(0, blurAmount) * 0.0017 * Float(targets.scene.height), useDOF ? 1 : 0),
             exposure: SIMD4(gain, 0, 0, 0))
         func draw(_ pipeline: MTLRenderPipelineState, to target: MTLTexture, textures: [MTLTexture]) throws {
             let pass = MTLRenderPassDescriptor()
@@ -110,12 +111,23 @@ final class MetalDepthOfField {
             try draw(bokeh, to: targets.bokeh, textures: [targets.half])
             try draw(fill, to: targets.filled, textures: [targets.bokeh])
         }
-        // With DOF disabled, composite reads only the original full-resolution scene.
+        // With DOF disabled, composite reads only the scene and scales it to the drawable.
         try draw(composite, to: output, textures: [targets.scene, targets.depth, targets.filled])
     }
 
     private enum PostError: LocalizedError {
         case unavailable
         var errorDescription: String? { "Unable to create the Metal depth-of-field render targets." }
+    }
+}
+
+/// Bound pixel work while retaining the drawable's aspect ratio.
+enum BerryRenderQuality {
+    static func sceneSize(drawable: CGSize, fast: Bool) -> CGSize {
+        guard fast else { return drawable }
+        let longest = max(drawable.width, drawable.height, 1)
+        let scale = min(0.7, 1600 / longest)
+        return CGSize(width: max(1, (drawable.width * scale).rounded()),
+                      height: max(1, (drawable.height * scale).rounded()))
     }
 }

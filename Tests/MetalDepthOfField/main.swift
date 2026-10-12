@@ -39,13 +39,13 @@ depthDescriptor.isDepthWriteEnabled = true
 depthDescriptor.depthCompareFunction = .always
 let depthState = device.makeDepthStencilState(descriptor: depthDescriptor)!
 
-func render(width: Int, height: Int, focus: Float = 8, enabled: Bool = true, amount: Float = 3) throws -> [UInt8] {
+func render(width: Int, height: Int, focus: Float = 8, enabled: Bool = true, amount: Float = 3, fast: Bool = false) throws -> [UInt8] {
     let outputDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm_srgb, width: width, height: height, mipmapped: false)
     outputDescriptor.storageMode = .shared
     outputDescriptor.usage = .renderTarget
     let output = device.makeTexture(descriptor: outputDescriptor)!
     let command = queue.makeCommandBuffer()!
-    let pass = try post.sceneRenderPass(size: CGSize(width: Double(width), height: Double(height)), clearColor: MTLClearColorMake(0, 0, 0, 1))
+    let pass = try post.sceneRenderPass(size: BerryRenderQuality.sceneSize(drawable: CGSize(width: Double(width), height: Double(height)), fast: fast), clearColor: MTLClearColorMake(0, 0, 0, 1))
     let encoder = command.makeRenderCommandEncoder(descriptor: pass)!
     encoder.setRenderPipelineState(pipeline)
     encoder.setDepthStencilState(depthState)
@@ -91,6 +91,11 @@ for (width, height) in [(440, 956), (257, 511)] {
     let topPixel = (height/4 * width + width/4) * 4
     let bottomPixel = (height*3/4 * width + width/4) * 4
     precondition(dof[topPixel + 2] > dof[topPixel] && dof[bottomPixel] > dof[bottomPixel + 2], "Composite must preserve Metal's top-left orientation")
+    let upscaled = try render(width: width, height: height, enabled: false, fast: true)
+    precondition(upscaled[topPixel + 2] > upscaled[topPixel] && upscaled[bottomPixel] > upscaled[bottomPixel + 2], "Fast rendering must preserve orientation when upscaling")
+    precondition(stride(from: 3, to: upscaled.count, by: 4).allSatisfy { upscaled[$0] == 255 }, "Upscaling must cover the entire drawable")
+    let restored = try render(width: width, height: height, enabled: false)
+    precondition(restored == sharp, "Turning off fast rendering must restore full detail")
     print("PASS \(width)×\(height): focal detail \(topDOF / topSharp), blurred detail \(bottomDOF / bottomSharp); focus pull, zero blur, and orientation")
 }
 print("Metal depth-of-field GPU checks passed")

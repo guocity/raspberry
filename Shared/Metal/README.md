@@ -31,3 +31,29 @@ node scripts/prepare-native-reel.cjs /tmp/raspberry-reel-reference.json
 xcrun swiftc -module-cache-path /tmp/raspberry-swift-module-cache Shared/Metal/BerryReel.swift Tests/NativeReel/main.swift -o /tmp/raspberry-reel-check
 /tmp/raspberry-reel-check NativeAssets/reel.json /tmp/raspberry-reel-reference.json
 ```
+
+Motion rotation checks (recenter, pitch/yaw/roll, immediate response, and bounded sensor-delay prediction):
+
+```sh
+xcrun swiftc -module-cache-path /tmp/raspberry-swift-module-cache Shared/Metal/BerryOrbitCamera.swift Tests/NativeMotion/main.swift -o /tmp/raspberry-motion-check
+/tmp/raspberry-motion-check
+```
+
+Gyroscope control samples Core Motion at a requested 120 Hz and uses its fused attitude directly, with up to 20 ms of rotation-rate prediction. It suspends auto spin and cancels the intro orbit so those animations do not compete with device movement. Actual sensor cadence and rendering frame rate depend on the device; evaluate motion latency on a physical iPhone.
+
+Fast rendering defaults on; gyroscope defaults off. Both switches are in the View menu at the top of Adjust. Fast rendering reduces scene pixels by at least half, halves the already reduced fuzz instance count, and bypasses the three blur passes. The composite scales the scene to the drawable. A two-frame GPU submission limit skips busy frames instead of queueing old poses.
+
+Render-size checks:
+
+```sh
+xcrun swiftc -module-cache-path /tmp/raspberry-swift-module-cache Shared/Metal/MetalDepthOfField.swift Tests/NativeRenderQuality/main.swift -o /tmp/raspberry-quality-check
+/tmp/raspberry-quality-check
+```
+
+The GPU regression also checks reduced-resolution upscaling, drawable coverage, orientation, and restoring full detail.
+
+Gyroscope orbit keeps the berry upright with a world-up camera, ignores phone roll, and limits elevation to ±80° to avoid pole flips. The motion checks cover roll removal and pole stability.
+
+The motion manager is created only when Gyroscope is enabled, and released when disabled, inactive, or playing the reel. Apple framework console diagnostics require an on-device backtrace for attribution; the app does not read managed preference files or call synchronous Swift concurrency bridges.
+
+On-device console investigation (2026-10-12, iOS 27.0.1 / 24A446): both `unsafeForcedSync called from Swift Concurrent context` and the missing `SFBarButtonGroupContainerAccessibility` warning were reproduced. Xcode's Library and Subsystem metadata identify **AXCoreUtilities** and **com.apple.Accessibility** for both messages. The exact concurrency warning string is also present in that framework's device-support binary. The recommended `libswiftos.dylib` / `os_log` breakpoint resolved but did not capture either warning on this OS build; no warning backtrace was obtained. This identifies the emitting framework, but does not prove the full call path or that the diagnostic is harmless. No app-level fix was established, and the temporary breakpoint was removed. Apple's guidance: https://developer.apple.com/forums/thread/802423.

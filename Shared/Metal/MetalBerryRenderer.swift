@@ -2,6 +2,7 @@ import MetalKit
 import SwiftUI
 import simd
 import UIKit
+import CoreMotion
 
 struct BerryMetalView: UIViewRepresentable {
     @ObservedObject var settings: BerrySettings
@@ -44,9 +45,13 @@ struct BerryMetalView: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ view: MTKView, context: Context) { view.isPaused = paused }
+    func updateUIView(_ view: MTKView, context: Context) {
+        view.isPaused = paused
+        context.coordinator.renderer?.updateMotion(paused: paused)
+    }
     static func dismantleUIView(_ view: MTKView, coordinator: Coordinator) {
         view.isPaused = true
+        coordinator.renderer?.updateMotion(paused: true)
         view.delegate = nil
         coordinator.renderer = nil
     }
@@ -74,6 +79,13 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
     private let textures: [MTLTexture]
     private let settings: BerrySettings
     private let camera: BerryOrbitCamera
+    // Do not initialize sensor services until the user enables Gyroscope.
+    private var motion: CMMotionManager?
+    private var motionReference: simd_quatf?
+    private var motionRotation = simd_quatf(angle: 0, axis: SIMD3(0, 1, 0))
+    private var motionPaused = false
+    // Avoid building a queue of old poses when the GPU cannot keep up.
+    private let framesInFlight = DispatchSemaphore(value: 2)
     private var lastTime = CACurrentMediaTime()
     private var resetID: UUID
     private let reel: BerryReel
@@ -175,16 +187,74 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
         (gestureRecognizer is UIPinchGestureRecognizer && otherGestureRecognizer is UIPanGestureRecognizer)
             || (gestureRecognizer is UIPanGestureRecognizer && otherGestureRecognizer is UIPinchGestureRecognizer)
     }
-    @objc func reset() { settings.reelPlaying = false; camera.goHome() }
+    deinit { motion?.stopDeviceMotionUpdates() }
+
+    func updateMotion(paused: Bool) {
+        motionPaused = paused
+        guard !paused && settings.gyroscopeEnabled && !settings.reelPlaying else {
+            if motion != nil {
+                motion?.stopDeviceMotionUpdates()
+                motion = nil
+                recenterMotion()
+            }
+            return
+        }
+        let manager: CMMotionManager
+        if let motion {
+            manager = motion
+        } else {
+            manager = CMMotionManager()
+            motion = manager
+        }
+        guard manager.isDeviceMotionAvailable && manager.isGyroAvailable else { return }
+        if !manager.isDeviceMotionActive {
+            manager.deviceMotionUpdateInterval = 1 / 120
+            manager.startDeviceMotionUpdates(using: .xArbitraryZVertical)
+            camera.cancelIntro()
+            recenterMotion()
+        }
+    }
+
+    private func recenterMotion() {
+        motionReference = nil
+        motionRotation = simd_quatf(angle: 0, axis: SIMD3(0, 1, 0))
+    }
+
+    private func sampleMotion() {
+        guard let motion, motion.isDeviceMotionActive, let sample = motion.deviceMotion else { return }
+        let q = sample.attitude.quaternion
+        let attitude = simd_normalize(simd_quatf(ix: Float(q.x), iy: Float(q.y), iz: Float(q.z), r: Float(q.w)))
+        guard let reference = motionReference else {
+            motionReference = attitude
+            return
+        }
+        // Core Motion already fuses and filters the sensors. An additional slow
+        // low-pass filter makes the berry trail the phone and then catch up.
+        let rate = sample.rotationRate
+        motionRotation = BerryMotionRotation.relative(reference: reference, attitude: attitude,
+            rotationRate: SIMD3(Float(rate.x), Float(rate.y), Float(rate.z)),
+            sampleAge: ProcessInfo.processInfo.systemUptime - sample.timestamp)
+    }
+
+    @objc func reset() {
+        settings.reelPlaying = false
+        camera.goHome()
+        recenterMotion()
+    }
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
 
     func draw(in view: MTKView) {
+        guard framesInFlight.wait(timeout: .now()) == .success else { return }
+        var submitted = false
+        defer { if !submitted { framesInFlight.signal() } }
         guard view.drawableSize.width > 0, view.drawableSize.height > 0,
               let drawable = view.currentDrawable,
               let command = queue.makeCommandBuffer() else { return }
         let now = CACurrentMediaTime()
         let dt = min(now - lastTime, 0.1)
         lastTime = now
+        updateMotion(paused: motionPaused)
+        sampleMotion()
         camera.setAspect(Double(view.drawableSize.width / view.drawableSize.height))
         if resetID != settings.resetCamera {
             resetID = settings.resetCamera
@@ -200,15 +270,16 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
             reel.stop()
             reelFrame = nil
             if settings.reelShotName != nil { settings.reelShotName = nil }
-            camera.autoRotate = settings.spinning
+            camera.autoRotate = settings.spinning && motion?.isDeviceMotionActive != true
             camera.update(dt: dt)
         }
-        var uniforms = makeUniforms(size: view.drawableSize)
+        let sceneSize = BerryRenderQuality.sceneSize(drawable: view.drawableSize, fast: settings.fastRendering)
+        var uniforms = makeUniforms(size: sceneSize)
         let background = reelFrame.map { Self.rgb($0.look.environment.background) * $0.look.environment.backgroundIntensity }
             ?? Self.rgb(settings.backgroundColor)
         let pass: MTLRenderPassDescriptor
         do {
-            pass = try postProcessing.sceneRenderPass(size: view.drawableSize,
+            pass = try postProcessing.sceneRenderPass(size: sceneSize,
                 clearColor: MTLClearColor(red: Double(background.x), green: Double(background.y), blue: Double(background.z), alpha: 1))
         } catch {
             settings.renderError = error.localizedDescription
@@ -233,7 +304,7 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
             encoder.setRenderPipelineState(fuzzPipeline)
             encoder.setDepthStencilState(fuzzDepth)
             encoder.setVertexBuffer(strands, offset: 0, index: 0)
-            encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 18, instanceCount: strandCount / 2)
+            encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 18, instanceCount: strandCount / (settings.fastRendering ? 4 : 2))
         }
         encoder.endEncoding()
         do {
@@ -241,13 +312,16 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
                 focusDistance: reelFrame.map { $0.focus + $0.look.post.focusOffset } ?? (camera.distance + settings.focusOffset),
                 focusRange: reelFrame?.look.post.focusRange ?? settings.focusRange,
                 blurAmount: reelFrame?.blur ?? settings.blurAmount,
-                enabled: reelFrame?.look.post.dof ?? settings.depthOfField,
+                enabled: !settings.fastRendering && (reelFrame?.look.post.dof ?? settings.depthOfField),
                 gain: reelFrame.map { $0.gain * $0.look.post.exposure } ?? 1)
         } catch {
             settings.renderError = error.localizedDescription
             return
         }
+        let limiter = framesInFlight
+        command.addCompletedHandler { _ in limiter.signal() }
         command.present(drawable)
+        submitted = true
         command.commit()
     }
 
@@ -263,8 +337,9 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
         let fov: Float = 20 * .pi / 180
         let rotation = matrix_identity_float4x4
         u.model = Self.translation(SIMD3(0, -1.12, 0))
-        u.camera = SIMD4(camera.position, 1)
-        u.mvp = Self.perspective(fov, aspect: aspect) * Self.lookAt(eye: camera.position, target: camera.target, roll: 0) * u.model
+        let pose = motionPose(eye: camera.position, target: camera.target, roll: 0)
+        u.camera = SIMD4(pose.eye, 1)
+        u.mvp = Self.perspective(fov, aspect: aspect) * Self.lookAt(eye: pose.eye, target: camera.target, roll: 0, worldUp: pose.up) * u.model
         let angle = settings.keyAzimuth * .pi / 180
         let baseDirections = [simd_normalize(SIMD3(sin(angle), 0.55, cos(angle))),
                           simd_normalize(SIMD3<Float>(-0.8, 0.2, 0.6)),
@@ -310,9 +385,10 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
     private func makeReelUniforms(_ frame: BerryReel.Frame, size: CGSize, adjustments: BerrySettings? = nil) -> BerryUniforms {
         var u = BerryUniforms()
         u.model = Self.translation(SIMD3(0, -1.12, 0))
-        u.camera = SIMD4(frame.position, 1)
+        let pose = motionPose(eye: frame.position, target: frame.target, roll: frame.roll)
+        u.camera = SIMD4(pose.eye, 1)
         u.mvp = Self.perspective(frame.fov * .pi / 180, aspect: Float(size.width / size.height))
-            * Self.lookAt(eye: frame.position, target: frame.target, roll: frame.roll) * u.model
+            * Self.lookAt(eye: pose.eye, target: frame.target, roll: 0, worldUp: pose.up) * u.model
         let look = frame.look
         let lights = [look.lights.key, look.lights.fill, look.lights.rim]
         let turn = Self.rotation(frame.lightTurn, axis: SIMD3(0, 1, 0))
@@ -425,9 +501,25 @@ final class MetalBerryRenderer: NSObject, MTKViewDelegate, UIGestureRecognizerDe
         }
         return SIMD3(linear(channels[0]), linear(channels[1]), linear(channels[2]))
     }
-    private static func lookAt(eye: SIMD3<Float>, target: SIMD3<Float>, roll: Float) -> simd_float4x4 {
+    private func motionPose(eye: SIMD3<Float>, target: SIMD3<Float>, roll: Float) -> (eye: SIMD3<Float>, up: SIMD3<Float>) {
         let z = simd_normalize(eye - target)
         let right = simd_normalize(simd_cross(SIMD3<Float>(0, 1, 0), z))
+        let up = simd_cross(z, right)
+        let basis = simd_float3x3(columns: (right * cos(roll) + up * sin(roll),
+            up * cos(roll) - right * sin(roll), z))
+        let rotation = simd_float3x3(motionRotation)
+        if motion?.isDeviceMotionActive == true {
+            // Motion moves the orbit direction, while world up keeps the berry upright.
+            let pose = BerryMotionRotation.upright(direction: basis * rotation * SIMD3(0, 0, 1))
+            return (target + pose.direction * simd_distance(eye, target), pose.up)
+        }
+        return (target + basis * rotation * SIMD3(0, 0, simd_distance(eye, target)),
+            basis * rotation * SIMD3(0, 1, 0))
+    }
+
+    private static func lookAt(eye: SIMD3<Float>, target: SIMD3<Float>, roll: Float, worldUp: SIMD3<Float> = SIMD3(0, 1, 0)) -> simd_float4x4 {
+        let z = simd_normalize(eye - target)
+        let right = simd_normalize(simd_cross(worldUp, z))
         let up = simd_cross(z, right)
         let x = right * cos(roll) + up * sin(roll)
         let y = up * cos(roll) - right * sin(roll)

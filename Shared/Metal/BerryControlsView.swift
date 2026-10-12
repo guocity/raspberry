@@ -3,6 +3,7 @@ import SwiftUI
 struct BerryControlsView: View {
     @ObservedObject var settings: BerrySettings
     @Environment(\.dismiss) private var dismiss
+    @State private var showingBackgroundPicker = false
 
     var body: some View {
         NavigationStack {
@@ -31,20 +32,45 @@ struct BerryControlsView: View {
                     valueSlider("Focus range", value: $settings.focusRange, range: 0.1...8)
                     valueSlider("Blur amount", value: $settings.blurAmount, range: 0...10)
                 }
-                Section("View") {
-                    ColorPicker("Background", selection: $settings.backgroundColor)
-                    Toggle("Fuzz", isOn: $settings.fuzzVisible)
-                    Toggle("Auto spin", isOn: $settings.spinning)
-                    Button("Reset camera") { settings.resetCamera = UUID() }
-                }
+
             }
             .navigationTitle("Adjust")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Button("Background") { showingBackgroundPicker = true }
+                        Toggle("Fuzz", isOn: $settings.fuzzVisible)
+                        Toggle("Auto spin", isOn: $settings.spinning)
+                        Toggle("Gyroscope", isOn: $settings.gyroscopeEnabled)
+                            .accessibilityIdentifier("gyroscope-toggle")
+                        Toggle("Fast rendering", isOn: $settings.fastRendering)
+                            .accessibilityIdentifier("fast-rendering-toggle")
+                        Button("Reset camera") { settings.resetCamera = UUID() }
+                    } label: {
+                        Label("View", systemImage: "eye")
+                    }
+                    .accessibilityIdentifier("view-menu")
+                }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
                 }
             }
+        }
+        .sheet(isPresented: $showingBackgroundPicker) {
+            NavigationStack {
+                Form {
+                    ColorPicker("Background", selection: $settings.backgroundColor)
+                }
+                .navigationTitle("Background")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") { showingBackgroundPicker = false }
+                    }
+                }
+            }
+            .presentationDetents([.medium])
         }
         .preferredColorScheme(.dark)
     }
@@ -74,7 +100,7 @@ struct NativeBerryView: View {
             settings.backgroundColor.ignoresSafeArea()
             BerryMetalView(settings: settings, paused: scenePhase != .active)
                 .ignoresSafeArea()
-                .accessibilityLabel("3D raspberry. Drag with one finger to rotate, two fingers to pan, pinch to zoom, double tap to reset.")
+                .accessibilityLabel("3D raspberry. Tilt or turn your device to rotate with Gyroscope enabled in Adjust. Drag with one finger to rotate, two fingers to pan, pinch to zoom, double tap to reset.")
             if let error = settings.renderError {
                 VStack(spacing: 12) {
                     Image(systemName: "exclamationmark.triangle")
@@ -154,6 +180,7 @@ struct NativeBerryView: View {
             }
             .accessibilityIdentifier("adjust-button")
             .accessibilityLabel("Adjust")
+
         }
         .font(.subheadline.weight(.medium))
         .foregroundStyle(.white)

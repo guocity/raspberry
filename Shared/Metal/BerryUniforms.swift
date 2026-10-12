@@ -52,6 +52,8 @@ final class BerrySettings: ObservableObject {
     @Published var focusRange: Float = 1.6
     @Published var blurAmount: Float = 3
     @Published var spinning = true
+    @Published var gyroscopeEnabled = false
+    @Published var fastRendering = true
     @Published var reelPlaying = false
     @Published var reelShotName: String?
     @Published var resetCamera = UUID()
